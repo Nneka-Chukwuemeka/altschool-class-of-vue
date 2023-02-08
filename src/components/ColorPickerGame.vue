@@ -9,11 +9,14 @@
 </template>
 
 <script>
-import { ref, reactive } from "@vue/reactivity";
+import ColorPicker from '../composables/ColorPicker.js';
 
 export default {
   setup() {
-    const colors = ["green", "red", "blue", "purple"];
+    const { colors, message, matchColor } = ColorPicker();
+    return { colors, message, matchColor };
+
+    /* const colors = ["green", "red", "blue", "purple"];
     let message = ref("Pick a color...");
 
     const matchColor = (value) => {
@@ -28,7 +31,7 @@ export default {
       message.value = `You loose [answer: ${colors[randomNumber]}]`;
     };
 
-    return { colors, message, matchColor };
+    return { colors, message, matchColor }; */
   },
 };
 </script>
